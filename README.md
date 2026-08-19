@@ -1,14 +1,28 @@
-# Welcome to Integrating With HubSpot I: Foundations
-This is the official repository for the Integrating With HubSpot I: Foundations Certification Course. For more information, please go to [HubSpot Academy](https://academy.hubspot.com).
+# Niki Vecek IWH I Practicum
 
-## In This Repository
-**[The Foundation of Authenticating Integrations Lesson](https://academy.hubspot.com)**
-1. The Basics of the OAuth Flow
-2. Refreshing an Access Token<sup>1</sup>
-3. The Basics of Using a Private App
+This is my practicum repository for the **Integrating With HubSpot I: Foundations** certification course.
 
-**[Coding Basic Web Apps to Make API Calls Lesson](https://academy.hubspot.com)**
-1. Building a Hello World App with HubSpot APIs
-2. API POST Requests and Custom CRM Properties
+## Custom Object
 
-<sup>1</sup> There's a step in the "Refreshing an Access Token" video that's accidentally omitted. To use the accessTokenCache constant, you must require the Node library Node-Cache. Then, underneath the `const refreshTokenStore = {};`, you must add in `const accessTokenCache = new NodeCache({ deleteOnExpire: true});`. This is reflected in the finished index.js file.
+I created a custom object called **Books**, associated with the Contacts object, with the following custom properties:
+
+- `name` (single-line text) — the book's title
+- `author` (single-line text)
+- `genre` (single-line text)
+
+Link to the list view of the custom object:
+https://app-eu1.hubspot.com/contacts/149131019/objects/2-252096418/views/all/list
+
+## Running this app
+
+1. Run `npm install` to install dependencies.
+2. Copy `.env.example` to `.env` and fill in:
+   - `PRIVATE_APP_ACCESS` — your private app's access token
+   - `CUSTOM_OBJECT_TYPE` — your custom object's fully-qualified name or object type ID (e.g. `books` or `2-12345678`)
+3. Run `node index.js` and open `http://localhost:3000`.
+
+## Routes
+
+- `GET /` — homepage, retrieves and displays all Book records in a table
+- `GET /update-cobj` — renders a form to create a new Book record
+- `POST /update-cobj` — creates a new Book record from the submitted form data, then redirects to the homepage

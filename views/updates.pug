@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        title= title
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        a(href="/") Return to the homepage
+        h1 Add new book
+        .form-wrapper
+            form(method="POST")
+                label(for="name") Name
+                input(type="text" name="name" id="name" required)
+
+                label(for="author") Author
+                input(type="text" name="author" id="author" required)
+
+                label(for="genre") Genre
+                input(type="text" name="genre" id="genre" required)
+
+                input(type="submit" value="Submit")

@@ -1,0 +1,17 @@
+{
+  "name": "niki-vecek-iwh-i-practicum",
+  "version": "1.0.0",
+  "description": "Integrating With HubSpot I: Foundations practicum",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Niki Vecek",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "pug": "^3.0.3"
+  }
+}
